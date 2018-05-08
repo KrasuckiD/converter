@@ -10,6 +10,8 @@ public class SDAFileWriterFactory {
             result = new PDFFileWriter();
         } else if (filePath.toLowerCase().endsWith(".json")) {
             result = new JSONFileWriter();
+        } else if (filePath.toLowerCase().endsWith("xlsx")) {
+            result = new ExelFileWriter();
         }
         return result;
 

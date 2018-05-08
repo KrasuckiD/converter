@@ -6,20 +6,13 @@ import java.util.List;
 
 public class App {
     public static void main(String[] args) throws IOException {
-
-//        String originFilePath = "C:\\Users\\Dell\\Desktop\\projekty\\books.csv";
-//        String destinationFilePath = "C:\\Users\\Dell\\Desktop\\projekty\\example.pdf";
-//
-//
-//        SDAFileReader reader = SDAFileReaderFactory.produce(originFilePath);
-//        SDAFileWriter writer = SDAFileWriterFactory.produce(destinationFilePath);
-//
-//        List<Book> values = reader.read(originFilePath);
-//        writer.write(values, destinationFilePath);
-
-        String filePath = "C:\\Users\\Dell\\Desktop\\projekty\\converter\\src\\test\\resources\\books.xlsx";
+        String filePath = "C:\\Users\\Dell\\Desktop\\projekty\\converter\\src\\test\\resources\\testowycsv.csv";
         SDAFileReader reader = SDAFileReaderFactory.produce(filePath);
+
+        String exelFilePath = "C:\\Users\\Dell\\Desktop\\projekty\\converter\\src\\test\\resources\\example.xlsx";
+        SDAFileWriter writer = SDAFileWriterFactory.produce(exelFilePath);
+
         List<Book> books = reader.read(filePath);
-        System.out.println(books);
+        writer.write(books,exelFilePath);
     }
 }
